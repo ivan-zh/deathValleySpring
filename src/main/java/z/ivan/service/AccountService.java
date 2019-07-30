@@ -16,10 +16,11 @@ import static z.ivan.service.utilites.SumAccounts.sumAccounts;
 public class AccountService {
     private static final Logger LOG = Logger.getLogger(AccountService.class.getName());
 
-    @Autowired
     private AccountRepository accountRepository;
 
-    public AccountService() {
+    @Autowired
+    public AccountService(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
     }
 
     public Account get(Long id) throws DaoException {

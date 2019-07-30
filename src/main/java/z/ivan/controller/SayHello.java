@@ -10,11 +10,16 @@ import z.ivan.service.UserService;
 
 @Controller
 public class SayHello {
-    @Autowired
+
     private UserService userService;
+    private AccountService accountService;
 
     @Autowired
-    private AccountService accountService;
+    public SayHello(UserService userService, AccountService accountService) {
+        this.userService = userService;
+        this.accountService = accountService;
+    }
+
     /**
      * main page
      */

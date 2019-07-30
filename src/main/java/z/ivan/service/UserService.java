@@ -18,14 +18,13 @@ public class UserService {
 
     private static final Logger LOG = Logger.getLogger(UserService.class.getName());
 
-    @Autowired
     private UserRepository userRepository;
-
-    @Autowired
     private AccountRepository accountRepository;
 
-
-    public UserService() {
+    @Autowired
+    public UserService(UserRepository userRepository, AccountRepository accountRepository) {
+        this.userRepository = userRepository;
+        this.accountRepository = accountRepository;
     }
 
     public String getRichest() {
